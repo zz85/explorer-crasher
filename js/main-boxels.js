@@ -122,7 +122,7 @@ function init() {
 
 	camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, .01, 100 );
 	scene.add( camera );
-	camera.position.z = 8;
+	camera.position.z = 6;
 
 	var s = 15;
 	shadowCamera = new THREE.OrthographicCamera( -s, s, s, -s, .1, 20 );
