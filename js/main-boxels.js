@@ -64,7 +64,7 @@ var scale = 0, nScale = 1;
 var params = {
 	type: 2,
 	spread: 4,
-	factor: .1,
+	factor: .51,
 	evolution: .5,
 	rotation: .5,
 	radius: 2,
@@ -72,7 +72,7 @@ var params = {
 	scaleX: .01,
 	scaleY: 6.1,
 	scaleZ: 10,
-	scale: .6
+	scale: 2
 };
 
 var cardTexture;
@@ -84,11 +84,12 @@ function init() {
 
 	container = document.getElementById( 'container' );
 
-	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer = new THREE.WebGLRenderer( { antialias: true, preserveDrawingBuffer: true } );
 	//renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	renderer.setClearColor( 0xffffff );
 	container.appendChild( renderer.domElement );
+	renderer.autoClearColor = false;
 
 	var image = document.createElement( 'img' );
 
@@ -130,14 +131,14 @@ function init() {
 
 	var light = new THREE.Mesh( new THREE.CylinderGeometry( 5, 6, 1, 36 ), new THREE.MeshBasicMaterial( { color: 0xffffff }) );
 	light.position.copy( shadowCamera.position );
-	scene.add( light );
+	//scene.add( light );
 	light.lookAt( scene.position );
 	light.rotation.y += Math.PI / 2;
 	light.rotation.z += Math.PI / 2;
 
 	var encasing = new THREE.Mesh( new THREE.CylinderGeometry( 5.1, 6.1, .9, 36 ), new THREE.MeshBasicMaterial( { color: 0x101010 }) );
 	encasing.position.copy( shadowCamera.position ).multiplyScalar( 1.01 );
-	scene.add( encasing );
+	//scene.add( encasing );
 	encasing.lookAt( scene.position );
 	encasing.rotation.y += Math.PI / 2;
 	encasing.rotation.z += Math.PI / 2;

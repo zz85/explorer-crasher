@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -54,7 +56,7 @@
 	<div id="intro" >
 		<h1>Explorer crasher</h1>
 		<h2>The explorer crasher that takes many internet explorers and turns them into crashes</h2>
-		<p>Graphics Noob <a href="https://twitter.com/blurspline" rel="external" >(tweet tweet)</a> · Based on <a href="https://www.clicktorelease.com/code/polygon-shredder/" rel="external">The Polygon Shredder</a> · <a href="http://alteredqualia.com/tmp/solitaire/" rel="external" >The Solitaire Winner</a> · <a href="http://mrdoob.com/lab/javascript/effects/ie6/" rel="external" >Internet Explorer 6</a></p>
+		<p>Graphics Noob <a href="https://twitter.com/blurspline" rel="external" >(tweet tweet)</a> . Based on <a href="https://www.clicktorelease.com/code/polygon-shredder/" rel="external">The Polygon Shredder</a> . <a href="http://alteredqualia.com/tmp/solitaire/" rel="external" >The Solitaire Winner</a> . <a href="http://mrdoob.com/lab/javascript/effects/ie6/" rel="external" >Internet Explorer 6</a></p>
 		<ul>
 			<li><b>Move mouse</b> around, the particles will be generated following the mouse</li>
 			<li>Press <b>space to pause</b>, space again to resume</li>
@@ -76,7 +78,7 @@
 
 	<div id="minIntro" class="hidden">
 		<h1>Explorer crasher</h1>
-		<p>Jaume Sanchez · <a href="https://www.clicktorelease.com/" rel="external" >clicktorelease</a> · <a href="https://twitter.com/thespite" rel="external">Twitter</a> · <a href="https://github.com/spite/polygon-crasher" rel="external" >GitHub</a></p>
+		<p>Jaume Sanchez . <a href="https://www.clicktorelease.com/" rel="external" >clicktorelease</a> . <a href="https://twitter.com/thespite" rel="external">Twitter</a> . <a href="https://github.com/spite/polygon-crasher" rel="external" >GitHub</a></p>
 	</div>
 
 	<div id="error" class="hidden">
@@ -439,7 +441,8 @@ void main() {
 
 	//mat4 rm = rotationMatrix( vec3( 0., 1., 0. ), alpha * 3.14159 );
 	//mat4 rm = rotationMatrix( col.xyz, 1. * alpha * 3.14159 + 0. * timer );
-	mat4 rm = mat4( calcLookAtMatrix( col.xyz, prev.xyz, 0. ) );//3.14159 / 4. + 0. * timer );
+	//mat4 rm = mat4( calcLookAtMatrix( col.xyz, prev.xyz, 0. ) );//3.14159 / 4. + 0. * timer );
+	mat4 rm = mat4( calcLookAtMatrix( col.xyz, vec3(100.0,0.0,0.0), 0. ) );//3.14159 / 4. + 0. * timer );
 	//float rm = 1.;
 	vec4 rn = rm * vec4( n, 1. );
 	vec3 visPosition = pos.xyz + rn.xyz * scale;
